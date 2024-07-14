@@ -19,6 +19,23 @@ Welcome to the AdminLTE 3 RTL integration with ASP.NET Core MVC repository! This
 - **Database Integration**: Uses Entity Framework Core with SQL Server for database operations.
 - **Request Localization**: Supports multiple cultures and UI cultures for localized content.
 
+## Screenshots
+
+### Login Page
+![Login Page](screenshots/login-page.png)
+
+### Home Screen (LTR)
+![Home Screen (LTR)](screenshots/home-screen-ltr.png)
+
+### Home Screen (RTL)
+![Home Screen (RTL)](screenshots/home-screen-rtl.png)
+
+### Roles Management
+![Roles Management](screenshots/roles-management.png)
+
+### Permissions Management
+![Permissions Management](screenshots/permissions-management.png)
+
 
 ## Getting Started
 
