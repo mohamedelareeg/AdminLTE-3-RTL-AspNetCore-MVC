@@ -1,0 +1,116 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@localizer["Product Name"]</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <!-- Conditional Styles -->
+    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        <link rel="stylesheet" href="~/theme/css/bootstrap-rtl.min.css">
+        <link rel="stylesheet" href="~/theme/css/rtl/adminlte.rtl.css">
+    }
+    else
+    {
+
+        <link rel="stylesheet" href="~/theme/css/adminlte.min.css">
+    }
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.1.2/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+
+    <!-- Page-specific Styles -->
+    <link href="~/css/customstyle.css" rel="stylesheet" />
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Partials -->
+        <partial name="_AdminlteMainHeader" />
+        <partial name="_AdminlteMainSidebar" />
+
+        <div class="content-wrapper">
+            <main role="main" class="content">
+                <!-- Loader -->
+                <div class="loader-container active" id="loaderContainer">
+                    <div class="loader">
+                        <img src="~/favicon.svg" alt="Loading..." width="100" height="100">
+                    </div>
+                </div>
+
+                <!-- Alerts and Content -->
+                <div class="custom-container animated">
+                    @RenderBody()
+                    <!-- Back to Top Button -->
+                    <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+                        <i class="fas fa-chevron-up"></i>
+                    </a>
+                </div>
+            </main>
+        </div>
+
+        <!-- AdminLTE Footer -->
+        <partial name="_AdminlteFooter" />
+    </div>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.2/js/buttons.print.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.0.18/sweetalert2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.0.18/sweetalert2.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/loadingoverlay@2.2.0/dist/loadingoverlay.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ua-parser-js/0.7.29/ua-parser.min.js"></script>
+
+
+
+
+    <!-- Page-specific Scripts -->
+    <script>
+        // Simulate loading with the spinner
+        document.addEventListener("DOMContentLoaded", function () {
+            var loaderContainer = document.getElementById("loaderContainer");
+
+            var interval = setInterval(function () {
+                // Simulate loading for a certain duration
+                clearInterval(interval);
+                loaderContainer.classList.remove("active");
+            }, 300); // Change the duration as needed
+        });
+    </script>
+</body>
+</html>

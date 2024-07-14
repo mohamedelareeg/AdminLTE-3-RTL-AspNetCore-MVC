@@ -1,0 +1,74 @@
+﻿@model AdminLTE.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "~/Views/Shared/_AdminlteBlank.cshtml";
+}
+
+<!-- Custom styles -->
+<style>
+    body {
+        background-image: url('/images/login.png');
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        margin: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+        color: #333;
+    }
+
+    .login-box {
+        width: 400px;
+        margin: auto;
+        margin-top: 10vh;
+    }
+
+    .login-logo a {
+        color: #fff;
+        font-size: 36px;
+    }
+</style>
+
+<div class="login-container text-center">
+    <span class="fas fa-user-circle fa-5x text-navy"></span>
+</div>
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label for="Email">Email address</label>
+        <div class="input-group">
+            <input asp-for="Email" type="email" class="form-control" id="Email" placeholder="Enter your email" required />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+            </div>
+        </div>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <div class="input-group">
+            <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Enter your password" required />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+            </div>
+        </div>
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input type="checkbox" asp-for="RememberMe" class="form-check-input" id="RememberMe">
+        <label class="form-check-label" for="RememberMe">Remember Me</label>
+    </div>
+
+    <button type="submit" class="btn bg-navy btn-block">Sign In</button>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
