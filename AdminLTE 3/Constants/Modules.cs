@@ -16,7 +16,29 @@
                     Parent = 1,
                     IsShow = 1,
                     FaIcon = "fas fa-tachometer-alt"
-                }
+                },
+                new Modules
+                {
+                    PageName = "Account",
+                    RoleName = "Account",
+                    Path = "",
+                    ControllerName = "Account",
+                    ActionName = "Index",
+                    Parent = 1,
+                    IsShow = 1,
+                    FaIcon = "fas fa-user-circle"
+                },
+                 new Modules
+                {
+                    PageName = "Roles",
+                    RoleName = "Roles",
+                    Path = "",
+                    ControllerName = "Roles",
+                    ActionName = "Index",
+                    Parent = 1,
+                    IsShow = 1,
+                    FaIcon = "fas fa-users-cog"
+                },
             };
         }
     }

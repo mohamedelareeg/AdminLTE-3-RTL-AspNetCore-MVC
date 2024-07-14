@@ -1,4 +1,4 @@
-﻿namespace AdminLTE.Contants
+﻿namespace AdminLTE.Constants
 {
     public static class Permissions
     {
@@ -16,7 +16,14 @@
                 $"Permissions.System.{module}.Delete"
             };
         }
+        public static List<string> GenerateAllPermissions(List<string> _permissons)
+        {
+            var allPermissions = new List<string>();
 
+            foreach (var permisson in _permissons)
+                allPermissions.AddRange(GeneratePermissionsList(permisson));
+            return allPermissions;
+        }
 
     }
 }

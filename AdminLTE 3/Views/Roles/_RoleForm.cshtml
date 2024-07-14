@@ -1,0 +1,51 @@
+﻿@using AdminLTE.ViewModels
+@model RoleFormViewModel
+
+<form method="post" asp-action="Add" class="mt-4">
+    <div class="input-group mb-3">
+        <input hidden asp-for="Name" class="form-control" placeholder="@localizer["RoleNamePlaceholder"]" />
+        <div class="input-group-append">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRoleModal">
+                <i class="fas fa-plus-circle mr-2"></i>@localizer["AddNewRole"]
+            </button>
+        </div>
+    </div>
+    <span asp-validation-for="Name" class="text-danger"></span>
+</form>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="addRoleModal" tabindex="-1" role="dialog" aria-labelledby="addRoleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-navy text-white">
+                <h5 class="modal-title" id="addRoleModalLabel">@localizer["AddNewRole"]</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Your Form with Annotations and Hints -->
+                <form method="post" asp-action="Add">
+                    <div class="form-group">
+                        <label for="Name">@localizer["RoleName"]</label>
+                        <input asp-for="Name" class="form-control" placeholder="@localizer["EnterRoleName"]" required />
+                        <small class="form-text text-muted">@localizer["FieldIsRequired"]</small>
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <!-- Add more fields and validations as needed -->
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">@localizer["Save"]</button>
+                        <button type="button" class="btn btn-red" data-dismiss="modal">@localizer["Cancel"]</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
