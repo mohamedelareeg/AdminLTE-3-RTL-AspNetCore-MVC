@@ -11,6 +11,14 @@ Welcome to the AdminLTE 3 RTL integration with ASP.NET Core MVC repository! This
 - **Localization**: Supports multi-language capabilities through resource files for different cultures.
 - **Error Handling Middleware**: Centralized error handling to manage and log exceptions efficiently.
 - **Roles and Permissions**: Fine-grained access control with roles and permissions management.
+- **JWT Authentication**: Integrated JWT (JSON Web Token) authentication for secure API access.
+- **Swagger Documentation**: Includes Swagger UI for API documentation and testing.
+- **Session Management**: Utilizes ASP.NET Core session middleware for managing user sessions.
+- **Global Exception Handling**: Implements custom middleware for handling global exceptions.
+- **Cors Configuration**: Configured CORS (Cross-Origin Resource Sharing) policies for API integration.
+- **Database Integration**: Uses Entity Framework Core with SQL Server for database operations.
+- **Request Localization**: Supports multiple cultures and UI cultures for localized content.
+
 
 ## Getting Started
 
